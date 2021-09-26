@@ -1,5 +1,67 @@
+:root {
+  font-family: sans-serif;
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+}
+
+.todo {
+  -webkit-box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+}
+
+.todo__list {
+  list-style-type: none;
+}
+
+.todo__title {
+  text-align: center;
+  padding: 0.8em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: #d6edff;
+}
+
+.todo__item {
+  font-size: 1rem;
+  padding: 1em 1.4em;
+  min-width: 12em;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.todo__item + .todo__item {
+  border-top: 1px solid #c9c9c9;
+}
+
+.todo__item--drag-start {
+  opacity: 0.4;
+  background-color: #aaa;
+}
+
+.todo__item--drag-enter:not(.todo__item--drag-start)::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #000;
 }
